@@ -6,7 +6,6 @@ public class Allomancer : MonoBehaviour
 {
     //PLAYER
     protected bool isMistborn;
-    public Transform lasso;
     public Light light;
 
     //ENEMY MISTINGS
@@ -168,13 +167,14 @@ public class Allomancer : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Mouse1))
             {
-                Instantiate(lasso, transform.position, lasso.rotation);
+                RaycastHit hitInfo;
+                Ray myRay = new Ray(transform.position, transform.forward);
+                Physics.Raycast(myRay, hitInfo);
 
-
-
-
-
-
+                if (hitInfo.collider.tag == "metal")
+                {
+                    //pull on the metal
+                }
             }
         }
     }
