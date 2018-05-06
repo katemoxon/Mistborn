@@ -174,6 +174,9 @@ public class Allomancer : MonoBehaviour
                 if (hitInfo.collider.tag == "metal")
                 {
                     //pull on the metal
+                    float step = 10.0f * Time.deltaTime;                    
+                    Transform metalTransform = hitInfo.collider.transform;
+                    metalTransform.position = Vector3.MoveTowards(metalTransform.position, transform.position, step);
                 }
             }
         }
