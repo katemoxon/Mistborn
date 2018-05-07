@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     //void Jump()
     //{
-    //    if (Input.GetKeyDown("space"))
+    //    if (Input.GetKeyDown("space") && controller.isGrounded)
     //        transform.Translate(Vector3.up * jumpForce * Time.deltaTime, Space.World);
     //}
 }
